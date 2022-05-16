@@ -6,17 +6,20 @@ namespace ProjectEulerSolutions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose one of the available problems by typing one of the numbers (1, 2)");
+            Console.WriteLine("Choose one of the available problems by typing one of the numbers (1, 2, 3)");
             int Choice = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
             switch (Choice)
             {
                 case 1:
-                    Console.WriteLine("The sum of the multiples of 3 and 5 below 1000 is: " + Exercise1().ToString());
+                    Console.WriteLine("The sum of the multiples of 3 and 5 below 1000 is: " + Exercise1());
                     break;
                 case 2:
-                    Console.WriteLine("\n The sum of even-valued terms to 4000000 is: " + Exercise2().ToString());
+                    Console.WriteLine("\n The sum of even-valued terms to 4000000 is: " + Exercise2());
+                    break;
+                case 3:
+                    Console.WriteLine("\n the difference between the sum of the squares of the first one hundred\n natural numbers and the square of the sum is " + Exercise6());
                     break;
             } 
         }
@@ -69,6 +72,30 @@ namespace ProjectEulerSolutions
             }
 
             return sumPairs;
+        }
+
+        /*The sum of the squares of the first ten natural numbers is, 385
+        The square of the sum of the first ten natural numbers is, 3025
+        Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 2640 .
+        Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.*/
+        public static int Exercise6()
+        {   int squareNumber = 0;
+            int sumOfSquares = 0;
+            int squareSum = 0;
+            int sumOfNaturals = 0;
+            int difference = 0;
+
+            for (int iteration = 0; iteration <= 100; iteration++)
+            { 
+                squareNumber = iteration * iteration;
+                sumOfSquares += squareNumber ;
+                sumOfNaturals += iteration; 
+            }
+
+            squareSum = sumOfNaturals * sumOfNaturals;
+            difference = squareSum - sumOfSquares;
+
+            return difference;
         }
 
 
