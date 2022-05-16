@@ -6,7 +6,7 @@ namespace ProjectEulerSolutions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose one of the available problems by typing one of the numbers (1)");
+            Console.WriteLine("Choose one of the available problems by typing one of the numbers (1, 2)");
             int Choice = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
